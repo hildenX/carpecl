@@ -1,0 +1,322 @@
+/* ╔══════════════════════════════════════════════════════════════╗
+   ║  SOS POS — Design System (light)                             ║
+   ║  Slate base · Violet primary · Soft elevation                ║
+   ╚══════════════════════════════════════════════════════════════╝ */
+
+.root {
+    /* Brand */
+    -pu-brand:          #7C3AED;
+    -pu-brand-light:    #8B5CF6;
+    -pu-brand-dark:     #5B21B6;
+    -pu-brand-glow:     rgba(124, 58, 237, 0.20);
+
+    /* Backgrounds */
+    -pu-bg-base:        #F8FAFC;
+    -pu-bg-surface:     #FFFFFF;
+    -pu-bg-elevated:    #FFFFFF;
+    -pu-bg-overlay:     #F1F5F9;
+    -pu-bg-hover:       rgba(15,23,42,0.04);
+
+    /* Borders */
+    -pu-border:         #E2E8F0;
+    -pu-border-focus:   #7C3AED;
+    -pu-border-light:   #CBD5E1;
+
+    /* Text */
+    -pu-text-primary:   #0F172A;
+    -pu-text-secondary: #64748B;
+    -pu-text-tertiary:  #94A3B8;
+    -pu-text-inverse:   #FFFFFF;
+
+    /* Semantic */
+    -pu-success:        #10B981;
+    -pu-success-bg:     rgba(16,185,129,0.10);
+    -pu-warning:        #F59E0B;
+    -pu-warning-bg:     rgba(245,158,11,0.10);
+    -pu-danger:         #EF4444;
+    -pu-danger-bg:      rgba(239,68,68,0.10);
+    -pu-info:           #0EA5E9;
+    -pu-info-bg:        rgba(14,165,233,0.10);
+
+    /* Font */
+    -fx-font-family: 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    -fx-font-size:   14px;
+    -fx-background-color: -pu-bg-base;
+}
+
+/* ─── Scrollbar ─── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-pane > .viewport { -fx-background-color: transparent; }
+.scroll-pane .scroll-bar:vertical,
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+}
+.scroll-pane .scroll-bar .track { -fx-background-color: transparent; }
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: rgba(15,23,42,0.18);
+    -fx-background-radius: 99;
+}
+.scroll-pane .scroll-bar .thumb:hover { -fx-background-color: rgba(15,23,42,0.32); }
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+}
+
+/* ─── Dialog ─── */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+}
+.dialog-pane .header-panel { -fx-background-color: white; }
+.dialog-pane .label { -fx-text-fill: -pu-text-primary; }
+
+/* ─── Buttons ─── */
+.btn-primary {
+    -fx-background-color: -pu-brand;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-padding: 12 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, -pu-brand-glow, 12, 0, 0, 4);
+}
+.btn-primary:hover  { -fx-background-color: -pu-brand-light; }
+.btn-primary:pressed{ -fx-scale-x: 0.98; -fx-scale-y: 0.98; -fx-background-color: -pu-brand-dark; }
+
+.btn-secondary {
+    -fx-background-color: white;
+    -fx-text-fill: -pu-text-primary;
+    -fx-border-color: -pu-border-light;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-padding: 11 22;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover { -fx-background-color: #F8FAFC; -fx-border-color: -pu-brand; -fx-text-fill: -pu-brand; }
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: -pu-text-secondary;
+    -fx-padding: 8 14;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+}
+.btn-ghost:hover { -fx-background-color: -pu-bg-hover; -fx-text-fill: -pu-text-primary; }
+
+.btn-danger {
+    -fx-background-color: -pu-danger-bg;
+    -fx-text-fill: -pu-danger;
+    -fx-border-color: rgba(239,68,68,0.25);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-padding: 11 22;
+    -fx-cursor: hand;
+}
+.btn-danger:hover { -fx-background-color: rgba(239,68,68,0.18); }
+
+/* ─── Inputs ─── */
+.field-base {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: -pu-text-primary;
+    -fx-prompt-text-fill: -pu-text-tertiary;
+    -fx-padding: 12 14;
+    -fx-font-size: 14px;
+}
+.field-base:focused { -fx-border-color: -pu-brand; }
+
+/* ─── Card ─── */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: -pu-border;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 14, 0, 0, 4);
+}
+.card-hover:hover {
+    -fx-border-color: -pu-brand;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.18), 22, 0, 0, 8);
+}
+
+/* ─── Badges ─── */
+.badge {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 99;
+    -fx-padding: 3 10;
+}
+.badge-success { -fx-background-color: -pu-success-bg; -fx-text-fill: -pu-success; }
+.badge-warning { -fx-background-color: -pu-warning-bg; -fx-text-fill: -pu-warning; }
+.badge-danger  { -fx-background-color: -pu-danger-bg;  -fx-text-fill: -pu-danger; }
+.badge-brand   { -fx-background-color: rgba(124,58,237,0.10); -fx-text-fill: -pu-brand; }
+
+/* ─── Helpers ─── */
+.label-heading { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+.label-sub     { -fx-font-size: 13px; -fx-text-fill: -pu-text-secondary; }
+.label-micro   { -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-fill: -pu-text-tertiary; -fx-letter-spacing: 0.6; }
+
+.page-header {
+    -fx-background-color: white;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 18 28;
+}
+
+/* ─── Table ─── */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-color: -pu-border;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-table-cell-border-color: transparent;
+}
+.table-view .column-header-background { -fx-background-color: #F9FAFB; -fx-background-radius: 14 14 0 0; }
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -pu-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 12 16;
+}
+.table-view .column-header .label {
+    -fx-text-fill: -pu-text-secondary;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.6;
+}
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F3F4F6 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 6 0;
+    -fx-table-cell-border-color: transparent;
+}
+.table-view .table-row-cell:hover    { -fx-background-color: #FAFAFA; }
+.table-view .table-row-cell:selected { -fx-background-color: rgba(124,58,237,0.08); }
+.table-view .table-cell { -fx-text-fill: -pu-text-primary; -fx-padding: 10 16; -fx-font-size: 13px; -fx-border-color: transparent; }
+
+/* ─── Tabs ─── */
+.tab-pane { -fx-background-color: transparent; }
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: white;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 0 0 1 0;
+}
+.tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 12 22;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.tab-pane .tab .label { -fx-text-fill: -pu-text-secondary; -fx-font-size: 13px; -fx-font-weight: bold; }
+.tab-pane .tab:selected { -fx-border-color: transparent transparent -pu-brand transparent; -fx-border-width: 0 0 2 0; }
+.tab-pane .tab:selected .label { -fx-text-fill: -pu-brand; }
+.tab-pane .tab:hover .label { -fx-text-fill: -pu-text-primary; }
+
+/* ─── ComboBox ─── */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: -pu-text-primary;
+    -fx-font-size: 13px;
+}
+.combo-box .list-cell { -fx-text-fill: -pu-text-primary; -fx-background-color: transparent; }
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 12, 0, 0, 4);
+}
+.combo-box-popup .list-view .list-cell:hover { -fx-background-color: -pu-bg-hover; }
+
+/* ─── Progress ─── */
+.progress-indicator { -fx-progress-color: -pu-brand; }
+
+/* ─── Divider ─── */
+.pu-divider {
+    -fx-background-color: -pu-border;
+    -fx-pref-height: 1;
+    -fx-max-height: 1;
+}
+
+/* ─── Modal ─── */
+.pu-modal-root { -fx-background-color: rgba(15,23,42,0.42); }
+.pu-modal-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.24), 40, 0, 0, 16);
+}
+.pu-modal-header {
+    -fx-background-color: white;
+    -fx-padding: 20 28;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 20 20 0 0;
+}
+.pu-modal-body   { -fx-padding: 20 28; -fx-background-color: transparent; }
+.pu-modal-footer {
+    -fx-padding: 16 28;
+    -fx-background-color: #FAFAFA;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1 0 0 0;
+    -fx-background-radius: 0 0 20 20;
+}
+
+/* ─── Status text ─── */
+.status-online  { -fx-text-fill: -pu-success; -fx-font-weight: bold; }
+.status-offline { -fx-text-fill: -pu-danger;  -fx-font-weight: bold; }
+.status-error   { -fx-text-fill: -pu-danger;  -fx-font-weight: bold; }
+
+/* ─── Grid card ─── */
+.pu-grid-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 14, 0, 0, 4);
+}
+.pu-grid-card:hover {
+    -fx-border-color: -pu-brand;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.18), 22, 0, 0, 8);
+}
+
+/* ─── Form helpers ─── */
+.pu-form-label {
+    -fx-text-fill: -pu-text-secondary;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.5;
+}
+.pu-form-section-title {
+    -fx-text-fill: -pu-text-primary;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}

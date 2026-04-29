@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sospos.DTEsController"
+      styleClass="dtes-root"
+      xmlns="http://javafx.com/javafx/21"
+      stylesheets="@styles/theme.css,@styles/dtes.css">
+
+    <!-- Header -->
+    <HBox styleClass="dtes-header" alignment="CENTER_LEFT">
+        <Button text="← Volver" styleClass="btn-volver" onAction="#onVolver"/>
+        <Label text="Ventas &amp; DTEs" styleClass="dtes-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="countLabel" text="0 DTEs pendientes" styleClass="dtes-count"/>
+    </HBox>
+
+    <!-- TabPane principal -->
+    <TabPane styleClass="dtes-tabpane" VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+
+        <!-- ── Tab 1: Pendientes ── -->
+        <Tab text="  Pendientes  ">
+            <VBox>
+                <HBox styleClass="dtes-toolbar" alignment="CENTER_LEFT" spacing="16">
+                    <Label fx:id="statusLabel" text="" styleClass="dtes-status"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <ProgressIndicator fx:id="spinner" prefWidth="24" prefHeight="24"/>
+                    <Button fx:id="btnEnviarTodos" text="Enviar todos" styleClass="btn-enviar-todos"
+                            onAction="#onEnviarTodos"/>
+                </HBox>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="dtes-scroll">
+                    <VBox fx:id="listaContainer" spacing="10" styleClass="dtes-lista">
+                        <padding><Insets top="16" right="24" bottom="24" left="24"/></padding>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+        </Tab>
+
+        <!-- ── Tab 2: Histórico ── -->
+        <Tab text="  Histórico  ">
+            <VBox>
+                <HBox styleClass="dtes-toolbar" alignment="CENTER_LEFT" spacing="16">
+                    <Label fx:id="histCountLabel" text="" styleClass="dtes-status"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Actualizar" styleClass="btn-volver" onAction="#onRefrescarHistorico"/>
+                </HBox>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="dtes-scroll">
+                    <VBox fx:id="histContainer" spacing="10" styleClass="dtes-lista">
+                        <padding><Insets top="16" right="24" bottom="24" left="24"/></padding>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+        </Tab>
+
+    </TabPane>
+
+</VBox>

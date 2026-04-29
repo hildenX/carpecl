@@ -1,0 +1,81 @@
+/* ══════════════════════════════════════════
+   SOS POS — Cajas
+══════════════════════════════════════════ */
+.cajas-root {
+    -fx-background-color: -pu-bg-base;
+}
+
+.cajas-header {
+    -fx-background-color: white;
+    -fx-padding: 18 28 18 28;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.cajas-title    { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+.cajas-subtitle { -fx-font-size: 13px; -fx-text-fill: -pu-text-secondary; }
+
+.btn-volver {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7C3AED;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-padding: 6 10 6 0;
+    -fx-border-color: transparent;
+}
+.btn-volver:hover { -fx-text-fill: #6D28D9; }
+
+.cajas-scroll { -fx-background-color: transparent; -fx-border-color: transparent; }
+.cajas-grid   { -fx-padding: 28; -fx-hgap: 20; -fx-vgap: 20; }
+
+/* ─── Tarjeta ─── */
+.caja-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 14, 0, 0, 4);
+    -fx-pref-width: 320;
+    -fx-min-width: 300;
+    -fx-cursor: hand;
+}
+.caja-card:hover {
+    -fx-border-color: #7C3AED;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.18), 22, 0, 0, 8);
+    -fx-translate-y: -2;
+}
+
+.caja-nombre { -fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+.caja-id     { -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-fill: -pu-text-secondary; -fx-letter-spacing: 0.6; }
+
+.badge-abierta {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #065F46;
+    -fx-background-radius: 999;
+    -fx-padding: 4 12 4 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.8;
+}
+.badge-cerrada {
+    -fx-background-color: #F3F4F6;
+    -fx-text-fill: #6B7280;
+    -fx-background-radius: 999;
+    -fx-padding: 4 12 4 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.8;
+}
+
+.icono-info {
+    -fx-background-radius: 8;
+    -fx-min-width: 32; -fx-min-height: 32;
+    -fx-max-width: 32; -fx-max-height: 32;
+    -fx-alignment: center;
+}
+.info-label { -fx-font-size: 10.5px; -fx-text-fill: -pu-text-tertiary; -fx-font-weight: bold; -fx-letter-spacing: 0.5; }
+.info-value { -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+.empty-label { -fx-font-size: 14px; -fx-text-fill: -pu-text-secondary; }

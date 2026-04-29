@@ -1,0 +1,149 @@
+/* ══════════════════════════════════════════
+   SOS POS — DTEs / Documentos
+══════════════════════════════════════════ */
+.dtes-root {
+    -fx-background-color: -pu-bg-base;
+}
+
+/* ─── Header ─── */
+.dtes-header {
+    -fx-background-color: white;
+    -fx-padding: 18 28 18 28;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.dtes-title { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+
+.btn-volver {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7C3AED;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 6 14 6 0;
+    -fx-border-color: transparent;
+}
+.btn-volver:hover { -fx-text-fill: #6D28D9; }
+
+.dtes-count {
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7C3AED;
+    -fx-background-color: #EDE9FE;
+    -fx-padding: 5 14;
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(124,58,237,0.25);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+}
+
+.dtes-tabpane { -fx-background-color: transparent; }
+
+/* ─── Toolbar ─── */
+.dtes-toolbar {
+    -fx-padding: 14 28;
+    -fx-background-color: -pu-bg-base;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 0 0 1 0;
+}
+.dtes-status { -fx-font-size: 13px; -fx-text-fill: -pu-text-secondary; }
+
+/* ─── Lista ─── */
+.dtes-scroll { -fx-background-color: transparent; -fx-border-color: transparent; }
+.dtes-lista  { -fx-background-color: -pu-bg-base; }
+
+/* ─── Fila DTE ─── */
+.dte-fila {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 10, 0, 0, 3);
+}
+.dte-fila:hover {
+    -fx-border-color: -pu-brand-light;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.15), 16, 0, 0, 5);
+}
+
+.dte-icono {
+    -fx-min-width: 38; -fx-min-height: 38;
+    -fx-max-width: 38; -fx-max-height: 38;
+    -fx-alignment: center;
+}
+.dte-titulo  { -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+.dte-detalle { -fx-font-size: 12px; -fx-text-fill: -pu-text-secondary; }
+.dte-total   { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+
+.dte-badge-pendiente {
+    -fx-background-color: #FEF3C7;
+    -fx-text-fill: #92400E;
+    -fx-font-size: 10.5px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10;
+    -fx-background-radius: 999;
+}
+.dte-badge-emitido {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #065F46;
+    -fx-font-size: 10.5px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10;
+    -fx-background-radius: 999;
+}
+.dte-badge-error {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #B91C1C;
+    -fx-font-size: 10.5px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10;
+    -fx-background-radius: 999;
+}
+.dte-badge-enviando {
+    -fx-background-color: #DBEAFE;
+    -fx-text-fill: #1E40AF;
+    -fx-font-size: 10.5px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10;
+    -fx-background-radius: 999;
+}
+
+.dte-empty { -fx-font-size: 14px; -fx-text-fill: -pu-text-tertiary; -fx-padding: 40 0; }
+
+/* ─── Botones ─── */
+.btn-pdf-dte {
+    -fx-background-color: white;
+    -fx-text-fill: #7C3AED;
+    -fx-border-color: #DDD6FE;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 14;
+    -fx-cursor: hand;
+}
+.btn-pdf-dte:hover { -fx-background-color: #EDE9FE; -fx-border-color: #7C3AED; }
+
+.btn-enviar-todos {
+    -fx-background-color: linear-gradient(to right, #7C3AED, #5B21B6);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.35), 12, 0, 0, 4);
+}
+.btn-enviar-todos:hover {
+    -fx-background-color: linear-gradient(to right, #6D28D9, #4C1D95);
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.5), 18, 0, 0, 6);
+}
+.btn-enviar-todos:disabled {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #9CA3AF;
+    -fx-effect: none;
+    -fx-cursor: default;
+    -fx-opacity: 1;
+}

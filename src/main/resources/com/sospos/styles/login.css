@@ -1,0 +1,122 @@
+/* ══════════════════════════════════════════
+   PUDÚ POS — Login Screen (dedicated)
+   Mirrors the home.css style
+   ══════════════════════════════════════════ */
+
+.root {
+    -fx-background-color: #0d0f14;
+}
+
+/* ─── Left bg panel ─── */
+.bg-panel {
+    -fx-background-image: url("../images/login-bg.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* ─── Right form panel ─── */
+.form-panel {
+    -fx-background-color: #0d0f14;
+    -fx-padding: 48 60;
+    -fx-alignment: center;
+    -fx-border-color: rgba(255,255,255,0.07);
+    -fx-border-width: 0 0 0 1;
+}
+
+/* ─── Logo card ─── */
+.logo-card {
+    -fx-background-color: linear-gradient(to bottom right, #7c3aed, #4c1d95);
+    -fx-background-radius: 20;
+    -fx-padding: 12 16;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.50), 20, 0, 0, 6);
+    -fx-max-width: 90;
+    -fx-alignment: center;
+}
+
+/* ─── Welcome text ─── */
+.welcome-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #f1f5f9;
+}
+
+.welcome-sub {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+}
+
+/* ─── Form section ─── */
+.form-box {
+    -fx-max-width: 340;
+}
+
+.form-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #f1f5f9;
+}
+
+.form-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #475569;
+}
+
+/* ─── Field labels ─── */
+.field-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #64748b;
+}
+
+/* ─── Inputs ─── */
+.input-field {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 13 16;
+    -fx-font-size: 14px;
+    -fx-text-fill: #f1f5f9;
+    -fx-prompt-text-fill: #334155;
+    -fx-pref-height: 48;
+}
+.input-field:focused {
+    -fx-border-color: rgba(124,58,237,0.80);
+    -fx-background-color: rgba(124,58,237,0.05);
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.20), 10, 0, 0, 0);
+}
+
+/* ─── Error ─── */
+.error-label {
+    -fx-text-fill: #f87171;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: 600;
+    -fx-background-color: rgba(244,63,94,0.09);
+    -fx-background-radius: 8;
+    -fx-padding: 9 12;
+    -fx-border-color: rgba(244,63,94,0.22);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* ─── Primary button ─── */
+.submit-btn {
+    -fx-background-color: linear-gradient(to right, #7c3aed, #6d28d9);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+    -fx-background-radius: 12;
+    -fx-padding: 15 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.42), 18, 0, 0, 5);
+}
+.submit-btn:hover {
+    -fx-background-color: linear-gradient(to right, #8b5cf6, #7c3aed);
+    -fx-effect: dropshadow(gaussian, rgba(139,92,246,0.58), 24, 0, 0, 7);
+}
+.submit-btn:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}

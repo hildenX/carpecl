@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sospos.LoginController"
+      prefWidth="1100" prefHeight="660"
+      xmlns="http://javafx.com/javafx/21"
+      stylesheets="@styles/theme.css,@styles/login.css">
+
+    <!-- ═══════════════════════════════ PANEL IZQUIERDO: Imagen ═══════════════════════════════ -->
+    <Region styleClass="bg-panel" HBox.hgrow="ALWAYS"/>
+
+    <!-- ═══════════════════════════════ PANEL DERECHO: Formulario ═══════════════════════════════ -->
+    <VBox styleClass="form-panel" alignment="CENTER" spacing="0" prefWidth="450" minWidth="420">
+
+        <!-- Logo PUDÚ -->
+        <VBox alignment="CENTER" styleClass="logo-card" spacing="6">
+            <ImageView fitWidth="64" fitHeight="64" preserveRatio="true">
+                <image>
+                    <Image url="@images/pudu-logo-new.png"/>
+                </image>
+            </ImageView>
+        </VBox>
+
+        <!-- Título Bienvenido -->
+        <Region prefHeight="16"/>
+        <Label text="Bienvenido" styleClass="welcome-title"/>
+        <Label text="Inicia sesión en tu sistema POS" styleClass="welcome-sub"/>
+
+        <!-- Separador -->
+        <Region prefHeight="24"/>
+
+        <!-- Formulario -->
+        <VBox styleClass="form-box" spacing="18" maxWidth="340">
+
+            <!-- Título sección -->
+            <VBox spacing="4">
+                <Label text="Iniciar Sesión" styleClass="form-title"/>
+                <Label text="Ingresa tus credenciales para continuar" styleClass="form-subtitle"/>
+            </VBox>
+
+            <!-- Email -->
+            <VBox spacing="6">
+                <Label text="Email" styleClass="field-label"/>
+                <TextField fx:id="emailField" promptText="tu@email.com" styleClass="input-field"/>
+            </VBox>
+
+            <!-- Contraseña -->
+            <VBox spacing="6">
+                <Label text="Contraseña" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField" promptText="••••••••" styleClass="input-field"/>
+            </VBox>
+
+            <!-- Error -->
+            <Label fx:id="errorLabel" styleClass="error-label" wrapText="true"/>
+
+            <!-- Botón -->
+            <Button text="Iniciar sesión" onAction="#onLogin"
+                    styleClass="submit-btn" maxWidth="Infinity"/>
+
+        </VBox>
+
+    </VBox>
+
+</HBox>

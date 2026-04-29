@@ -1,0 +1,131 @@
+/* ══════════════════════════════════════════
+   SOS POS — Home / Login (Glass card)
+══════════════════════════════════════════ */
+
+.bg-panel {
+    -fx-background-image: url("../images/login-bg.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+.home-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.88);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(255, 255, 255, 0.65);
+    -fx-border-radius: 24;
+    -fx-border-width: 1.5;
+    -fx-padding: 36 48 36 48;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 40, 0, 0, 14);
+}
+
+.logo-card {
+    -fx-background-color: linear-gradient(to bottom right, #7C3AED, #5B21B6);
+    -fx-background-radius: 20;
+    -fx-padding: 12 16 12 16;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.45), 18, 0, 0, 6);
+    -fx-max-width: 72;
+    -fx-max-height: 72;
+}
+
+.home-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A;
+}
+
+.home-sub {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748B;
+}
+
+.home-brand {
+    -fx-font-size: 11px;
+    -fx-text-fill: #7C3AED;
+    -fx-font-weight: bold;
+    -fx-background-color: #EDE9FE;
+    -fx-background-radius: 20;
+    -fx-padding: 3 10 3 10;
+}
+
+.session-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #059669;
+    -fx-font-weight: bold;
+    -fx-background-color: #D1FAE5;
+    -fx-background-radius: 20;
+    -fx-padding: 5 12 5 12;
+}
+
+.field-label {
+    -fx-font-size: 10.5px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+    -fx-letter-spacing: 0.6;
+}
+
+.login-field {
+    -fx-background-color: rgba(248, 247, 255, 0.9);
+    -fx-border-color: #DDD6FE;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-border-width: 1.5;
+    -fx-padding: 12 16 12 16;
+    -fx-font-size: 14px;
+    -fx-text-fill: #0F172A;
+    -fx-prompt-text-fill: #C4B5FD;
+}
+
+.login-field:focused {
+    -fx-border-color: #7C3AED;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.18), 8, 0, 0, 0);
+}
+
+.error-label {
+    -fx-text-fill: #DC2626;
+    -fx-font-size: 12px;
+    -fx-background-color: #FEF2F2;
+    -fx-background-radius: 10;
+    -fx-padding: 8 12 8 12;
+    -fx-border-color: #FECACA;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.btn-comenzar {
+    -fx-background-color: linear-gradient(to right, #7C3AED, #5B21B6);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30;
+    -fx-padding: 14 0 14 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.38), 12, 0, 0, 4);
+}
+
+.btn-comenzar:hover {
+    -fx-background-color: linear-gradient(to right, #6D28D9, #4C1D95);
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.55), 18, 0, 0, 6);
+}
+
+.btn-comenzar:pressed { -fx-scale-y: 0.97; -fx-scale-x: 0.99; }
+.btn-comenzar:disabled { -fx-opacity: 0.55; -fx-effect: none; }
+
+.btn-offline {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-border-width: 1.5;
+    -fx-padding: 12 0 12 0;
+}
+
+.btn-offline:hover {
+    -fx-text-fill: #7C3AED;
+    -fx-border-color: #C4B5FD;
+    -fx-background-color: rgba(245, 243, 255, 0.9);
+}

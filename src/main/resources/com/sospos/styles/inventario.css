@@ -1,0 +1,122 @@
+/* ══════════════════════════════════════════
+   SOS POS — Inventario
+══════════════════════════════════════════ */
+.view-container, .inv-root {
+    -fx-background-color: -pu-bg-base;
+}
+
+/* ─── Header ─── */
+.inv-header {
+    -fx-background-color: white;
+    -fx-padding: 18 28 18 28;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 0 0 1 0;
+}
+.inv-title    { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+.inv-subtitle { -fx-font-size: 13px; -fx-text-fill: -pu-text-secondary; }
+
+.btn-volver {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7C3AED;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-padding: 6 10 6 0;
+    -fx-border-color: transparent;
+}
+.btn-volver:hover { -fx-text-fill: #6D28D9; }
+
+.search-box {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: -pu-border;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 0 4;
+}
+.search-input {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+    -fx-text-fill: -pu-text-primary;
+    -fx-prompt-text-fill: -pu-text-tertiary;
+    -fx-padding: 10 14;
+}
+
+/* ─── Stats ─── */
+.stats-row { -fx-padding: 20 28 8 28; }
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-color: -pu-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-padding: 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 10, 0, 0, 4);
+}
+.card-yellow { -fx-border-color: #FCD34D; }
+
+.stat-icon-box {
+    -fx-background-radius: 10;
+    -fx-min-width: 44; -fx-min-height: 44;
+    -fx-max-width: 44; -fx-max-height: 44;
+    -fx-alignment: center;
+}
+.icon-purple { -fx-background-color: #EDE9FE; }
+.icon-yellow { -fx-background-color: #FEF3C7; }
+
+.stat-letter        { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #7C3AED; }
+.stat-letter-yellow { -fx-text-fill: #B45309; }
+
+.stat-label { -fx-font-size: 12px; -fx-text-fill: -pu-text-secondary; }
+.stat-value { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -pu-text-primary; }
+
+/* ─── Filtros ─── */
+.filtros-row {
+    -fx-padding: 8 28 12 28;
+    -fx-background-color: -pu-bg-base;
+}
+.filtro-label { -fx-font-size: 13px; -fx-text-fill: -pu-text-secondary; }
+.filtro-combo {
+    -fx-background-color: white;
+    -fx-border-color: -pu-border-light;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-font-size: 13px;
+}
+
+/* ─── Tabla ─── */
+.tabla-container {
+    -fx-padding: 0 28 20 28;
+    -fx-background-color: -pu-bg-base;
+}
+.tabla {
+    -fx-background-color: white;
+    -fx-border-color: -pu-border;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-border-width: 1;
+}
+.tabla .column-header {
+    -fx-background-color: #F9FAFB;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -pu-text-secondary;
+    -fx-padding: 12 16 12 16;
+    -fx-border-color: transparent transparent #E5E7EB transparent;
+    -fx-border-width: 1;
+}
+.tabla .column-header-background { -fx-background-color: #F9FAFB; }
+.tabla .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F3F4F6 transparent;
+    -fx-border-width: 1;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 6 0;
+}
+.tabla .table-row-cell:hover    { -fx-background-color: #FAFAFA; }
+.tabla .table-row-cell:selected { -fx-background-color: rgba(124,58,237,0.08); }
+
+.tabla-empty { -fx-font-size: 14px; -fx-text-fill: -pu-text-tertiary; }

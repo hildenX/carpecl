@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sospos.CajasController"
+      styleClass="cajas-root"
+      xmlns="http://javafx.com/javafx/21"
+      stylesheets="@styles/theme.css,@styles/cajas.css">
+
+    <!-- ══════ HEADER ══════ -->
+    <HBox styleClass="cajas-header" alignment="CENTER_LEFT" spacing="12">
+        <Button text="← Volver" styleClass="btn-volver" onAction="#onVolver"/>
+        <VBox spacing="2">
+            <Label text="Cajas Registradoras" styleClass="cajas-title"/>
+            <Label text="Selecciona una caja para comenzar a vender" styleClass="cajas-subtitle"/>
+        </VBox>
+    </HBox>
+
+    <!-- ══════ CONTENIDO ══════ -->
+    <ScrollPane styleClass="cajas-scroll" VBox.vgrow="ALWAYS" fitToWidth="true">
+        <FlowPane fx:id="cajasGrid" styleClass="cajas-grid" alignment="TOP_LEFT"/>
+    </ScrollPane>
+
+</VBox>

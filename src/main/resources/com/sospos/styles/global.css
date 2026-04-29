@@ -1,0 +1,19 @@
+/* ══════════════════════════════════════════
+   global.css — DEPRECATED
+   All styles have been migrated to theme.css
+   This file is kept only for backward compat.
+   ══════════════════════════════════════════ */
+
+/*
+  The canonical design system is now at:
+  /styles/theme.css
+
+  Each screen has its own CSS file:
+  - home.css     → Home / Login splash
+  - login.css    → Login form panel
+  - dashboard.css → Dashboard / module picker
+  - pos.css      → POS screen
+  - inventario.css → Inventory
+  - cajas.css    → Cash registers
+  - dtes.css     → DTEs / documents
+*/

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.sospos.PosController"
+            xmlns="http://javafx.com/javafx/21"
+            styleClass="pos-root"
+            stylesheets="@styles/theme.css,@styles/pos.css">
+
+    <!-- ══════════════ SIDEBAR IZQUIERDO ══════════════ -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="80" alignment="TOP_CENTER" spacing="6">
+
+            <!-- Logo -->
+            <ImageView fitWidth="56" fitHeight="56" preserveRatio="true">
+                <image><Image url="@images/pudu-logo-new.png"/></image>
+            </ImageView>
+            <padding><Insets top="8" bottom="8"/></padding>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Logout -->
+            <Button styleClass="sidebar-btn,sidebar-btn-logout" text="Salir"
+                    prefWidth="56" prefHeight="48" onAction="#onLogout"/>
+
+            <Region prefHeight="8"/>
+        </VBox>
+    </left>
+
+    <!-- ══════════════ CENTRO: PRODUCTOS ══════════════ -->
+    <center>
+        <VBox styleClass="main-area">
+
+            <!-- Header -->
+            <HBox styleClass="main-header" alignment="CENTER_LEFT">
+                <VBox spacing="2">
+                    <Label text="CATÁLOGO" styleClass="header-category"/>
+                    <Label text="Productos" styleClass="header-title"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <VBox alignment="CENTER_RIGHT" spacing="2">
+                    <Label fx:id="syncStatusLabel" text="● Online"
+                           style="-fx-font-size:11px; -fx-font-weight:800; -fx-text-fill:#10b981; -fx-background-color:rgba(16,185,129,0.12); -fx-background-radius:99; -fx-padding:4 10;"/>
+                    <Label fx:id="timeLabel" styleClass="header-time"/>
+                    <Label fx:id="dateLabel" styleClass="header-date"/>
+                </VBox>
+            </HBox>
+
+            <!-- Barra de búsqueda -->
+            <HBox styleClass="search-container">
+                <padding><Insets top="12" right="20" bottom="0" left="20"/></padding>
+                <TextField fx:id="searchField"
+                           promptText="🔍  Buscar por nombre o código de barras..."
+                           styleClass="search-field"
+                           HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <!-- Grid de productos -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                        styleClass="products-scroll"
+                        vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+                <FlowPane fx:id="productsGrid" styleClass="products-grid"
+                          hgap="14" vgap="14"/>
+            </ScrollPane>
+
+        </VBox>
+    </center>
+
+    <!-- ══════════════ DERECHA: CARRITO ══════════════ -->
+    <right>
+        <VBox styleClass="cart-panel" prefWidth="340" minWidth="310">
+
+            <!-- Header carrito -->
+            <VBox styleClass="cart-header" spacing="6">
+                <Label fx:id="cajaLabel" text="CAJA" styleClass="cart-caja"/>
+                <Label text="Pedido Actual" styleClass="cart-title"/>
+                <Label fx:id="itemsCountLabel" text="0 artículos" styleClass="cart-count"/>
+            </VBox>
+
+            <!-- Items del carrito -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="cart-scroll"
+                        hbarPolicy="NEVER">
+                <VBox fx:id="cartItemsBox" spacing="8" styleClass="cart-items-box">
+                    <Label fx:id="emptyCartLabel" text="El carrito está vacío"
+                           styleClass="cart-empty" maxWidth="Infinity" alignment="CENTER"/>
+                </VBox>
+            </ScrollPane>
+
+            <!-- Footer: totales -->
+            <VBox styleClass="cart-footer" spacing="12">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Subtotal" styleClass="cart-label"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="subtotalLabel" text="\$0" styleClass="cart-label"/>
+                </HBox>
+                <Region prefHeight="1" styleClass="pu-divider"/>
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Total" styleClass="cart-total-label"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="totalLabel" text="\$0" styleClass="cart-total-value"/>
+                </HBox>
+
+                <Button text="Proceder al Pago →" styleClass="btn-pago"
+                        maxWidth="Infinity" onAction="#onProcederAlPago"/>
+            </VBox>
+
+        </VBox>
+    </right>
+
+</BorderPane>

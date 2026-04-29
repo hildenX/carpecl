@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.sospos.HomeController"
+           xmlns="http://javafx.com/javafx/21"
+           stylesheets="@styles/theme.css,@styles/home.css">
+
+    <!-- Fondo: imagen del paisaje cubre toda la ventana -->
+    <Region styleClass="bg-panel"/>
+
+    <!-- Contenedor centrador (llena el StackPane, centra la tarjeta) -->
+    <VBox alignment="CENTER" styleClass="bg-scrim">
+
+        <!-- Tarjeta Glass -->
+        <VBox styleClass="home-panel" alignment="CENTER" spacing="14"
+              prefWidth="420" maxWidth="420">
+
+            <!-- Logo -->
+            <VBox alignment="CENTER" styleClass="logo-card" spacing="6">
+                <ImageView fitWidth="72" fitHeight="72" preserveRatio="true">
+                    <image><Image url="@images/pudu-logo-new.png"/></image>
+                </ImageView>
+            </VBox>
+
+            <!-- Título -->
+            <VBox alignment="CENTER" spacing="6">
+                <Label text="SOS POS" styleClass="home-title"/>
+                <Label text="Sistema Offline de Ventas" styleClass="home-sub"/>
+                <Label text="PUDÚ Tecnología" styleClass="home-brand"/>
+            </VBox>
+
+            <!-- Sesión previa guardada (visible solo si existe sesión) -->
+            <Label fx:id="sessionLabel" text="" styleClass="session-label"
+                   visible="false" managed="false"/>
+
+            <!-- Separador -->
+            <Separator prefWidth="300"/>
+
+            <!-- Formulario de ingreso -->
+            <VBox spacing="14" maxWidth="300">
+
+                <VBox spacing="5">
+                    <Label text="CORREO ELECTRÓNICO" styleClass="field-label"/>
+                    <TextField fx:id="emailField" promptText="tu@email.com"
+                               styleClass="login-field" prefWidth="300"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="CONTRASEÑA" styleClass="field-label"/>
+                    <PasswordField fx:id="passwordField" promptText="••••••••"
+                                   styleClass="login-field" prefWidth="300"/>
+                </VBox>
+
+                <!-- Mensaje de error -->
+                <Label fx:id="errorLabel" text="" styleClass="error-label"
+                       wrapText="true" maxWidth="300"/>
+
+                <!-- Botón principal -->
+                <Button fx:id="btnLogin" text="Ingresar"
+                        styleClass="btn-comenzar" onAction="#onLogin"
+                        prefWidth="300"/>
+
+                <!-- Botón continuar offline (aparece si hay sesión guardada) -->
+                <Button fx:id="btnOffline" text="Continuar sin conexión  →"
+                        styleClass="btn-offline" onAction="#onOffline"
+                        prefWidth="300" visible="false" managed="false"/>
+
+            </VBox>
+
+        </VBox>
+    </VBox>
+</StackPane>

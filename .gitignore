@@ -1,0 +1,10 @@
+target/
+*.class
+*.rar
+
+# Carpeta duplicada (copia de desarrollo, no parte del repositorio)
+SOS pos/
+
+# Artefactos de IDE
+.vscode/
+.claude/

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sospos.DashboardController"
+      styleClass="dash-root" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/21"
+      stylesheets="@styles/theme.css,@styles/dashboard.css">
+
+    <!-- Header violeta -->
+    <HBox styleClass="dash-header" alignment="CENTER_LEFT">
+        <ImageView fitWidth="56" fitHeight="56" preserveRatio="true">
+            <image><Image url="@images/pudu-logo-new.png"/></image>
+        </ImageView>
+        <VBox spacing="2" HBox.hgrow="ALWAYS">
+            <padding><Insets left="14"/></padding>
+            <Label text="SOS POS" styleClass="dash-header-title"/>
+            <Label fx:id="negocioLabel" text="PUDÚ Tecnología"
+                   style="-fx-font-size: 12px; -fx-text-fill: rgba(255,255,255,0.75); -fx-font-weight: bold;"/>
+        </VBox>
+        <Label fx:id="statusLabel" text="● Sin conexión" styleClass="status-offline"/>
+        <Button text="Cerrar sesión" styleClass="dash-logout" onAction="#onCerrarSesion"/>
+    </HBox>
+
+    <!-- Spacer arriba para centrar el contenido -->
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <!-- Bienvenida -->
+    <VBox alignment="CENTER" spacing="10">
+        <padding><Insets top="0" bottom="8"/></padding>
+        <Label text="PANEL DE CONTROL" styleClass="dash-eyebrow"/>
+        <Label text="¿Qué deseas hacer?" styleClass="dash-question"/>
+        <Label fx:id="pendingLabel" text="" styleClass="dash-sub"/>
+    </VBox>
+
+    <!-- 4 tarjetas en 2x2 -->
+    <HBox alignment="CENTER" spacing="20" styleClass="dash-modules">
+        <!-- Productos -->
+        <VBox styleClass="module-card" alignment="TOP_LEFT" spacing="22" onMouseClicked="#onProductos">
+            <StackPane styleClass="module-avatar,avatar-violet">
+                <Label text="PROD" styleClass="module-avatar-text"/>
+            </StackPane>
+            <VBox alignment="TOP_LEFT" spacing="4" VBox.vgrow="ALWAYS">
+                <Label text="Productos" styleClass="module-title"/>
+                <Label text="Productos cargados" styleClass="module-desc"/>
+            </VBox>
+            <Label text="ABRIR  →" styleClass="module-cta,cta-violet"/>
+        </VBox>
+
+        <!-- Cajas -->
+        <VBox styleClass="module-card,module-card-blue" alignment="TOP_LEFT" spacing="22" onMouseClicked="#onCajas">
+            <StackPane styleClass="module-avatar,avatar-blue">
+                <Label text="CJ" styleClass="module-avatar-text"/>
+            </StackPane>
+            <VBox alignment="TOP_LEFT" spacing="4" VBox.vgrow="ALWAYS">
+                <Label text="Cajas" styleClass="module-title"/>
+                <Label text="Apertura y cierre" styleClass="module-desc"/>
+            </VBox>
+            <Label text="GESTIONAR  →" styleClass="module-cta,cta-blue"/>
+        </VBox>
+
+        <!-- Sincronización -->
+        <VBox styleClass="module-card,module-card-green" alignment="TOP_LEFT" spacing="22" onMouseClicked="#onSincronizacion">
+            <StackPane styleClass="module-avatar,avatar-green">
+                <Label text="SYNC" styleClass="module-avatar-text"/>
+            </StackPane>
+            <VBox alignment="TOP_LEFT" spacing="4" VBox.vgrow="ALWAYS">
+                <Label text="Sincronizar" styleClass="module-title"/>
+                <Label text="Actualizar catálogo" styleClass="module-desc"/>
+            </VBox>
+            <Label text="EJECUTAR  →" styleClass="module-cta,cta-green"/>
+        </VBox>
+
+        <!-- DTEs -->
+        <VBox styleClass="module-card,module-card-amber" alignment="TOP_LEFT" spacing="22" onMouseClicked="#onDTEs">
+            <StackPane styleClass="module-avatar,avatar-amber">
+                <Label text="DTE" styleClass="module-avatar-text"/>
+            </StackPane>
+            <VBox alignment="TOP_LEFT" spacing="4" VBox.vgrow="ALWAYS">
+                <Label text="Documentos" styleClass="module-title"/>
+                <Label fx:id="dtePendingLabel" text="0 pendientes" styleClass="module-desc"/>
+            </VBox>
+            <Label text="REVISAR  →" styleClass="module-cta,cta-amber"/>
+        </VBox>
+    </HBox>
+
+    <!-- Spacer abajo para centrar el contenido -->
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <!-- Footer -->
+    <HBox alignment="CENTER" style="-fx-padding: 8 0 18 0;">
+        <Label text="SOS POS · PUDÚ Tecnología"
+               style="-fx-font-size: 10.5px; -fx-text-fill: #94A3B8; -fx-letter-spacing: 0.5;"/>
+    </HBox>
+
+</VBox>

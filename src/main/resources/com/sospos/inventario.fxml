@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sospos.InventarioController"
+      spacing="0" styleClass="view-container"
+      xmlns="http://javafx.com/javafx/21"
+      stylesheets="@styles/theme.css,@styles/inventario.css">
+
+    <!-- ══════ HEADER ══════ -->
+    <HBox styleClass="inv-header" alignment="CENTER_LEFT" spacing="12">
+        <Button text="← Volver" styleClass="btn-volver" onAction="#onVolver"/>
+        <VBox spacing="2">
+            <Label text="Inventario" styleClass="inv-title"/>
+            <Label text="Control de existencias y catálogo de productos" styleClass="inv-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox styleClass="search-box" alignment="CENTER_LEFT" spacing="8">
+            <TextField fx:id="searchField" promptText="Buscar por nombre o código de barras..."
+                       styleClass="search-input" prefWidth="320"/>
+        </HBox>
+    </HBox>
+
+    <!-- ══════ STATS CARDS ══════ -->
+    <HBox styleClass="stats-row" spacing="16">
+
+        <HBox styleClass="stat-card" spacing="16" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="stat-icon-box,icon-purple">
+                <Label text="P" styleClass="stat-letter"/>
+            </StackPane>
+            <VBox spacing="2">
+                <Label text="Total Productos" styleClass="stat-label"/>
+                <Label fx:id="statTotal" text="0" styleClass="stat-value"/>
+            </VBox>
+        </HBox>
+
+        <HBox styleClass="stat-card,card-yellow" spacing="16" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="stat-icon-box,icon-yellow">
+                <Label text="C" styleClass="stat-letter,stat-letter-yellow"/>
+            </StackPane>
+            <VBox spacing="2">
+                <Label text="Categorías" styleClass="stat-label"/>
+                <Label fx:id="statCategorias" text="0" styleClass="stat-value"/>
+            </VBox>
+        </HBox>
+
+    </HBox>
+
+    <!-- ══════ FILTROS ══════ -->
+    <HBox styleClass="filtros-row" spacing="12" alignment="CENTER_LEFT">
+        <Label text="Tipo:" styleClass="filtro-label"/>
+        <ComboBox fx:id="filtroTipo" styleClass="filtro-combo" prefWidth="140"
+                  onAction="#onFiltrar"/>
+        <Label text="Categoría:" styleClass="filtro-label"/>
+        <ComboBox fx:id="filtroCategoria" styleClass="filtro-combo" prefWidth="160"
+                  onAction="#onFiltrar"/>
+        <Label fx:id="mostrando" text="Mostrando 0 productos" styleClass="filtro-label"/>
+    </HBox>
+
+    <!-- ══════ TABLA ══════ -->
+    <VBox VBox.vgrow="ALWAYS" styleClass="tabla-container">
+        <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS" styleClass="tabla">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <placeholder>
+                <Label text="No hay productos que mostrar" styleClass="tabla-empty"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+</VBox>
