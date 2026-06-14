@@ -1,0 +1,45 @@
+<Window x:Class="SosPOS.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SOS POS - Login"
+        Width="450" Height="550"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="320">
+
+            <!-- Logo / Título -->
+            <TextBlock Text="SOS POS"
+                       FontSize="36" FontWeight="Bold"
+                       Foreground="{StaticResource PrimaryBrush}"
+                       HorizontalAlignment="Center" Margin="0,0,0,8"/>
+            <TextBlock Text="Sistema de Punto de Venta"
+                       FontSize="14"
+                       Foreground="{StaticResource TextSecondaryBrush}"
+                       HorizontalAlignment="Center" Margin="0,0,0,40"/>
+
+            <!-- Usuario -->
+            <TextBlock Text="Usuario" FontSize="13" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,6"/>
+            <TextBox x:Name="TxtUsuario" Style="{StaticResource BaseTextBox}" Margin="0,0,0,16"/>
+
+            <!-- Contraseña -->
+            <TextBlock Text="Contraseña" FontSize="13" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,6"/>
+            <PasswordBox x:Name="TxtPassword"
+                         FontSize="14" Padding="10,8"
+                         BorderBrush="#BDC3C7" BorderThickness="1"
+                         Margin="0,0,0,30"/>
+
+            <!-- Botón -->
+            <Button Content="Ingresar"
+                    Style="{StaticResource PrimaryButton}"
+                    Click="BtnLogin_Click"/>
+
+            <TextBlock x:Name="TxtError"
+                       Foreground="Red" FontSize="12"
+                       HorizontalAlignment="Center"
+                       Margin="0,12,0,0" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</Window>

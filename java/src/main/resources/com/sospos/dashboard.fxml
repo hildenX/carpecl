@@ -12,11 +12,11 @@
 
     <!-- Header violeta -->
     <HBox styleClass="dash-header" alignment="CENTER_LEFT">
-        <ImageView fitWidth="56" fitHeight="56" preserveRatio="true">
-            <image><Image url="@images/pudu-logo-new.png"/></image>
+        <ImageView fitWidth="84" fitHeight="84" preserveRatio="true" smooth="true">
+            <image><Image url="@images/logo.png"/></image>
         </ImageView>
         <VBox spacing="2" HBox.hgrow="ALWAYS">
-            <padding><Insets left="14"/></padding>
+            <padding><Insets left="16"/></padding>
             <Label text="SOS POS" styleClass="dash-header-title"/>
             <Label fx:id="negocioLabel" text="PUDÚ Tecnología"
                    style="-fx-font-size: 12px; -fx-text-fill: rgba(255,255,255,0.75); -fx-font-weight: bold;"/>

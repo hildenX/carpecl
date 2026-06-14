@@ -15,8 +15,8 @@
         <VBox styleClass="sidebar" prefWidth="80" alignment="TOP_CENTER" spacing="6">
 
             <!-- Logo -->
-            <ImageView fitWidth="56" fitHeight="56" preserveRatio="true">
-                <image><Image url="@images/pudu-logo-new.png"/></image>
+            <ImageView fitWidth="56" fitHeight="56" preserveRatio="true" smooth="true">
+                <image><Image url="@images/logo.png"/></image>
             </ImageView>
             <padding><Insets top="8" bottom="8"/></padding>
 

@@ -22,10 +22,10 @@
 .logo-card {
     -fx-background-color: linear-gradient(to bottom right, #7C3AED, #5B21B6);
     -fx-background-radius: 20;
-    -fx-padding: 12 16 12 16;
+    -fx-padding: 14 18;
     -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.45), 18, 0, 0, 6);
-    -fx-max-width: 72;
-    -fx-max-height: 72;
+    -fx-max-width: 96;
+    -fx-max-height: 96;
 }
 
 .home-title {

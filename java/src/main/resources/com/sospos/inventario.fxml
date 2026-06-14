@@ -50,13 +50,14 @@
 
     <!-- ══════ FILTROS ══════ -->
     <HBox styleClass="filtros-row" spacing="12" alignment="CENTER_LEFT">
-        <Label text="Tipo:" styleClass="filtro-label"/>
-        <ComboBox fx:id="filtroTipo" styleClass="filtro-combo" prefWidth="140"
-                  onAction="#onFiltrar"/>
         <Label text="Categoría:" styleClass="filtro-label"/>
-        <ComboBox fx:id="filtroCategoria" styleClass="filtro-combo" prefWidth="160"
+        <ComboBox fx:id="filtroCategoria" styleClass="filtro-combo" prefWidth="180"
                   onAction="#onFiltrar"/>
+        <Region HBox.hgrow="ALWAYS"/>
         <Label fx:id="mostrando" text="Mostrando 0 productos" styleClass="filtro-label"/>
+        <Button fx:id="btnPrevPage" text="Anterior" onAction="#onPrevPage"/>
+        <Label fx:id="pageLabel" text="Página 1" styleClass="filtro-label"/>
+        <Button fx:id="btnNextPage" text="Siguiente" onAction="#onNextPage"/>
     </HBox>
 
     <!-- ══════ TABLA ══════ -->

@@ -1,0 +1,35 @@
+<Page x:Class="SosPOS.Views.HomeView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Inicio"
+      Background="{StaticResource BackgroundBrush}">
+
+    <StackPanel Margin="40">
+        <TextBlock Text="Bienvenido a SOS POS"
+                   FontSize="28" FontWeight="Bold"
+                   Foreground="{StaticResource PrimaryBrush}"
+                   Margin="0,0,0,8"/>
+        <TextBlock Text="Selecciona una opcion del menu lateral para comenzar."
+                   FontSize="15"
+                   Foreground="{StaticResource TextSecondaryBrush}"
+                   Margin="0,0,0,40"/>
+
+        <!-- Tarjetas de resumen -->
+        <WrapPanel>
+            <Border Width="200" Height="120" Background="White" CornerRadius="8" Margin="0,0,20,20">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Ventas Hoy" FontSize="13" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtVentasHoy" Text="$0.00" FontSize="28" FontWeight="Bold"
+                               Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Border Width="200" Height="120" Background="White" CornerRadius="8" Margin="0,0,20,20">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Productos" FontSize="13" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtProductos" Text="0" FontSize="28" FontWeight="Bold"
+                               Foreground="{StaticResource PrimaryBrush}" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+    </StackPanel>
+</Page>

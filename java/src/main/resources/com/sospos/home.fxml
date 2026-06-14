@@ -21,8 +21,8 @@
 
             <!-- Logo -->
             <VBox alignment="CENTER" styleClass="logo-card" spacing="6">
-                <ImageView fitWidth="72" fitHeight="72" preserveRatio="true">
-                    <image><Image url="@images/pudu-logo-new.png"/></image>
+                <ImageView fitWidth="96" fitHeight="96" preserveRatio="true" smooth="true">
+                    <image><Image url="@images/logo.png"/></image>
                 </ImageView>
             </VBox>
 

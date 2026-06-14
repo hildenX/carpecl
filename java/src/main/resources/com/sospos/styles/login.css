@@ -28,7 +28,7 @@
 .logo-card {
     -fx-background-color: linear-gradient(to bottom right, #7c3aed, #4c1d95);
     -fx-background-radius: 20;
-    -fx-padding: 12 16;
+    -fx-padding: 14 18;
     -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.50), 20, 0, 0, 6);
     -fx-max-width: 90;
     -fx-alignment: center;
@@ -59,7 +59,7 @@
 
 .form-subtitle {
     -fx-font-size: 12px;
-    -fx-text-fill: #475569;
+    -fx-text-fill: #64748B;
 }
 
 /* ─── Field labels ─── */

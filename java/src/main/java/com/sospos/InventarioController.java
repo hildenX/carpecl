@@ -20,16 +20,21 @@ import java.util.Map;
 public class InventarioController {
 
     @FXML private TextField searchField;
-    @FXML private ComboBox<String> filtroTipo;
     @FXML private ComboBox<String> filtroCategoria;
     @FXML private TableView<ProductoDetalle> tablaProductos;
     @FXML private Label statTotal;
     @FXML private Label statCategorias;
     @FXML private Label mostrando;
+    @FXML private Label pageLabel;
+    @FXML private Button btnPrevPage;
+    @FXML private Button btnNextPage;
 
     private final DatabaseService db = DatabaseService.getInstance();
     private final NumberFormat fmt = NumberFormat.getIntegerInstance(new Locale("es", "CL"));
     private ObservableList<ProductoDetalle> datos = FXCollections.observableArrayList();
+    private int currentPage = 1;
+    private int pageSize = 7;
+    private int pageCount = 1;
 
     @FXML
     public void initialize() {
@@ -42,10 +47,6 @@ public class InventarioController {
 
     // ─── Filtros ─────────────────────────────────────────────────────────────
     private void configurarFiltros() {
-        filtroTipo.setItems(FXCollections.observableArrayList(
-                "Todos", "comun", "creativo", "comida", "plato"));
-        filtroTipo.setValue("Todos");
-
         List<String> cats = db.getCategorias();
         filtroCategoria.setItems(FXCollections.observableArrayList(cats));
         filtroCategoria.setValue("Todas");
@@ -166,11 +167,10 @@ public class InventarioController {
     // ─── Carga de datos ───────────────────────────────────────────────────────
     private void cargarDatos() {
         String busqueda = searchField != null ? searchField.getText() : null;
-        String tipo = filtroTipo != null ? filtroTipo.getValue() : null;
         String cat = filtroCategoria != null ? filtroCategoria.getValue() : null;
         int catId = resolverCategoriaId(cat);
 
-        List<ProductoDetalle> lista = db.getProductos(busqueda, tipo, catId);
+        List<ProductoDetalle> lista = db.getProductos(busqueda, null, catId);
 
         // Dedupe por (nombre normalizado + SKU): el catálogo viene con duplicados
         // del sync; mostramos un solo registro por producto lógico.
@@ -182,22 +182,56 @@ public class InventarioController {
             unicos.putIfAbsent(key, p);
         }
         java.util.List<ProductoDetalle> deduped = new java.util.ArrayList<>(unicos.values());
-        datos.setAll(deduped);
+
+        int total = deduped.size();
+        pageCount = Math.max(1, (int) Math.ceil((double) total / pageSize));
+        if (currentPage > pageCount) currentPage = pageCount;
+        int start = (currentPage - 1) * pageSize;
+        int end = Math.min(total, start + pageSize);
+        java.util.List<ProductoDetalle> pageItems = deduped.subList(start, end);
+
+        datos.setAll(pageItems);
+        if (pageLabel != null) pageLabel.setText("Página " + currentPage + " de " + pageCount);
+        if (btnPrevPage != null) btnPrevPage.setDisable(currentPage <= 1);
+        if (btnNextPage != null) btnNextPage.setDisable(currentPage >= pageCount);
         if (mostrando != null)
-            mostrando.setText("Mostrando " + deduped.size()
-                    + " producto" + (deduped.size() != 1 ? "s" : ""));
+            mostrando.setText("Mostrando " + pageItems.size()
+                    + " de " + total + " producto" + (pageItems.size() != 1 ? "s" : ""));
     }
 
     private int resolverCategoriaId(String catNombre) {
         if (catNombre == null || catNombre.equals("Todas")) return 0;
-        return 0;
+        return db.getCategoriaMap().entrySet().stream()
+                .filter(e -> e.getValue().equals(catNombre))
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElse(0);
     }
 
     private void configurarBusqueda() {
-        searchField.textProperty().addListener((obs, old, val) -> cargarDatos());
+        searchField.textProperty().addListener((obs, old, val) -> {
+            currentPage = 1;
+            cargarDatos();
+        });
     }
 
-    @FXML void onFiltrar() { cargarDatos(); }
+    @FXML void onFiltrar() { currentPage = 1; cargarDatos(); }
+
+    @FXML
+    void onPrevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            cargarDatos();
+        }
+    }
+
+    @FXML
+    void onNextPage() {
+        if (currentPage < pageCount) {
+            currentPage++;
+            cargarDatos();
+        }
+    }
 
     @FXML
     void onVolver() {
